@@ -5,9 +5,7 @@ import { Header, Footer} from "./components";
 function App() {
   return (
     <>
-      <Header />
       <Outlet />
-      <Footer />
     </>
   );
 }
