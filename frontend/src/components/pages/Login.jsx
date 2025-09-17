@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {BackButton} from "../index";
 
 export function Login() {
   const [form, setForm] = useState({
@@ -18,7 +19,9 @@ export function Login() {
   };
 
   return (
+    <>
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900 dark:to-emerald-950">
+        <BackButton />
       <div className="w-full max-w-md bg-white dark:bg-green-900 rounded-2xl shadow-lg p-8">
         <h2 className="text-2xl font-bold text-center text-green-800 dark:text-green-100 mb-6">
           Log In
@@ -95,5 +98,6 @@ export function Login() {
         </p>
       </div>
     </div>
+    </>
   );
 }
