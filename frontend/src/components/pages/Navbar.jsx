@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { Logo } from "../index";
+
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -18,19 +20,15 @@ export function Navbar() {
   const inactiveClass = "text-green-700 hover:bg-green-100 dark:text-green-200 dark:hover:bg-green-800";
 
   return (
-    <nav className="bg-white dark:bg-green-900 shadow-md border-b border-green-200 dark:border-green-700">
+    <nav className="fixed top-0 w-full bg-white dark:bg-green-900 shadow-md border-b border-green-200 dark:border-green-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img
-              src="/logo.png"
-              alt="Logo"
-              className="h-10 w-10 rounded-full border border-green-400"
-            />
+            < Logo />
             <span className="text-xl font-bold text-green-700 dark:text-green-200">
-              AgroAI
-            </span>
+            Krishi Sakhi
+          </span>
           </div>
 
           {/* Always visible Home */}
