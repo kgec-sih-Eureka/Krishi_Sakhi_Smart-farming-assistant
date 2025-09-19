@@ -2,6 +2,7 @@ import React from "react";
 import { User, LogIn, Leaf, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
+import { Logo } from "./index";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,12 +20,10 @@ export function Header() {
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
                 {/* Logo Icon */}
-                <div className="w-10 h-10 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center shadow-md">
-                  <Leaf className="w-6 h-6 text-white" />
-                </div>
+                <Logo />
                 {/* Company Name */}
-                <span className="ml-3 text-xl font-semibold text-green-900">
-                  EcoNature
+                <span className=" ml-3 text-xl font-bold text-green-700 dark:text-green-700">
+                  Krishi Sakhi
                 </span>
               </div>
             </div>

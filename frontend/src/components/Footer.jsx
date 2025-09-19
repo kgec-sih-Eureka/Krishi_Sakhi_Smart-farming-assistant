@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Logo } from "./index";
 
 export function Footer() {
   return (
@@ -9,11 +10,9 @@ export function Footer() {
           {/* Brand + logo */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-md bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center text-white font-semibold">
-                Y
-              </div>
+              <Logo />
               <div>
-                <p className="text-lg font-semibold text-green-900 dark:text-green-100">Your Company</p>
+                <p className="text-lg font-semibold text-green-900 dark:text-green-100">Krishi Sakhi</p>
                 <p className="text-sm text-green-700 dark:text-green-300">Helping users since 2025</p>
               </div>
             </div>

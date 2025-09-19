@@ -1,12 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router";
-import { Navbar } from "../index";
+import { Navbar, BackButton } from "../index";
 
 export function User() {
-    return (
-        <>
-        <Navbar />
-        <Outlet />
-        </>
-    )
+  return (
+    <>
+      <Navbar />
+      <BackButton />
+      <Outlet />
+    </>
+  );
 }
