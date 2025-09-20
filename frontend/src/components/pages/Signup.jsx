@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {BackButton} from "../index";
+import { useNavigate } from "react-router-dom"; 
+import axios from "axios";
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -14,10 +17,20 @@ export default function SignUp() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
-    // Add your API call or logic here
+    // Here you would typically handle form submission, e.g., send data to backend
+    try {
+      const res = await axios.post("http://localhost:5000/api/signup", form);
+      alert("Form submitted!");
+      navigate(`/user/${res.data.id}/home`); // Redirect to home or login page after successful signup
+    } catch (err) {
+      console.error("Error sending data:", err);
+    }
+    
+
+  
+    
   };
 
   return (

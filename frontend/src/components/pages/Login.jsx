@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {BackButton} from "../index";
+import axios from "axios";    
 
 export function Login() {
   const [form, setForm] = useState({
@@ -12,11 +13,18 @@ export function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login submitted:", form);
-    // Add your login logic or API call here
+    try {
+      const res = await axios.post("http://localhost:5000/api/login", form);
+      alert("Login successful!");
+      window.location.href = `/user/${res.data.id}/home`; // Redirect to user home page after successful login
+      
+    } catch (err) {
+      console.error("Error:", err);
+    }
   };
+
 
   return (
     <>
@@ -39,7 +47,7 @@ export function Login() {
             <input
               id="phone"
               name="phone"
-              type="tel"
+              
               pattern="[0-9]{10}"
               placeholder="Enter 10-digit number"
               value={form.phone}
