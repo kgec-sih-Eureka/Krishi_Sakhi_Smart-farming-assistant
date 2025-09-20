@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Logo } from "../index";
 
-
 export function Navbar() {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,91 +16,92 @@ export function Navbar() {
   const navLinkClass =
     "block px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200";
   const activeClass = "bg-green-600 text-white";
-  const inactiveClass = "text-green-700 hover:bg-green-100 dark:text-green-200 dark:hover:bg-green-800";
+  const inactiveClass =
+    "text-green-700 hover:bg-green-100 dark:text-green-200 dark:hover:bg-green-800";
 
   return (
     <nav className="fixed top-0 w-full bg-white dark:bg-green-900 shadow-md border-b border-green-200 dark:border-green-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            < Logo />
+            <Logo />
             <span className="text-xl font-bold text-green-700 dark:text-green-200">
-            Krishi Sakhi
-          </span>
+              Krishi Sakhi
+            </span>
           </div>
+          <div className="flex items-center space-x-4">
+            {/* Always visible Home */}
+            <NavLink
+              to="home"
+              className={({ isActive }) =>
+                `hidden sm:inline-block px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                  isActive ? activeClass : inactiveClass
+                }`
+              }
+            >
+              Home
+            </NavLink>
 
-          {/* Always visible Home */}
-          <NavLink
-            to="home"
-            className={({ isActive }) =>
-              `hidden sm:inline-block px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                isActive ? activeClass : inactiveClass
-              }`
-            }
-          >
-            Home
-          </NavLink>
-
-          {/* Desktop Nav Links */}
-          <div className="hidden sm:flex items-center space-x-4"
-          >
-            <NavLink
-              to="chatbot"
-              className={({ isActive }) =>
-                `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
-              }
-            >
-              Chatbot
-            </NavLink>
-            <NavLink
-              to="market"
-              className={({ isActive }) =>
-                `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
-              }
-            >
-              Market
-            </NavLink>
-            <NavLink
-              to="crop-recommend"
-              className={({ isActive }) =>
-                `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
-              }
-            >
-              Crop Recommendation
-            </NavLink>
-            <NavLink
-              to="farm"
-              className={({ isActive }) =>
-                `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
-              }
-            >
-              Farm
-            </NavLink>
-            <NavLink
-              to="disease-detection"
-              className={({ isActive }) =>
-                `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
-              }
-            >
-              Disease Detection
-            </NavLink>
-            <NavLink
-              to="alerts"
-              className={({ isActive }) =>
-                `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
-              }
-            >
-              Alerts
-            </NavLink>
-            <NavLink
-              to="community"
-              className={({ isActive }) =>
-                `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
-              }
-            >
-              Community
-            </NavLink>
+            {/* Desktop Nav Links */}
+            <div className="hidden sm:flex items-center space-x-4">
+              <NavLink
+                to="chatbot"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
+                }
+              >
+                Chatbot
+              </NavLink>
+              <NavLink
+                to="market"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
+                }
+              >
+                Market
+              </NavLink>
+              <NavLink
+                to="crop-recommend"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
+                }
+              >
+                Crop Recommendation
+              </NavLink>
+              <NavLink
+                to="farm"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
+                }
+              >
+                 Your Farm
+              </NavLink>
+              <NavLink
+                to="disease-detection"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
+                }
+              >
+                Disease Detection
+              </NavLink>
+              <NavLink
+                to="alerts"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
+                }
+              >
+                Alerts
+              </NavLink>
+              <NavLink
+                to="community"
+                className={({ isActive }) =>
+                  `${navLinkClass} ${isActive ? activeClass : inactiveClass}`
+                }
+              >
+                Community
+              </NavLink>
+            </div>
           </div>
 
           {/* Logout (desktop) */}
